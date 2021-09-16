@@ -1,0 +1,77 @@
+@import '../../assets/variables.scss';
+.Dashboard {
+  height: 100vh;
+  padding: 30px 30px;
+  &_Logos {
+    display: flex;
+    margin-bottom: 70px;
+
+    img {
+      width: 80px;
+    }
+
+    div {
+      display: grid;
+      margin-left: 10px;
+
+      h2 {
+        font-size: 26px;
+        margin: 0;
+
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 auto;
+      }
+
+      h2,
+      h3 {
+        background: -webkit-linear-gradient(#E660E1, #9552E1, #8552E1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  &_Item {
+    display: flex;
+    border: 1px solid #EAEAEA;
+    border-radius: 15px;
+    margin: 30px 0;
+    transition: border 0.2s;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    &:hover {
+      border: 1px solid $primary;
+    }
+    &:nth-of-type(2) {
+      color: #1a1a1a75;
+    }
+      img {
+      margin: 0 30px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+  }
+
+  &_Events {
+    margin-top: 80px;
+    
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a3a;
+    }
+
+    h3 {
+      color: #1a1a1ac4;
+    }
+  }
+}
+
