@@ -10,7 +10,7 @@ const SignUp = () => {
 				<div className={classes.Ellipse}></div>
 				<h1>Sign Up</h1>
 				<form>
-					<label for="name" name="name">
+					<label htmlFor="name" name="name">
 						Full Name
 					</label>
 					<input
@@ -19,7 +19,7 @@ const SignUp = () => {
 						required
 						placeholder="Enter your full name"
 					/>
-					<label for="number" name="number">
+					<label htmlFor="number" name="number">
 						Phone Number
 					</label>
 					<input
@@ -28,7 +28,7 @@ const SignUp = () => {
 						required
 						placeholder="Enter your phone number"
 					/>
-					<label for="email" name="email">
+					<label htmlFor="email" name="email">
 						Email
 					</label>
 					<input
@@ -37,7 +37,7 @@ const SignUp = () => {
 						required
 						placeholder="Enter your E-Mail address"
 					/>
-					<label for="password" name="password">
+					<label htmlFor="password" name="password">
 						Password
 					</label>
 					<input
