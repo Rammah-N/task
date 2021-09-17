@@ -1,23 +1,19 @@
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
-
-import { react, useState } from "react";
-import { createBrowserHistory } from "history";
-import { Router } from "react-router";
+import axios from "axios";
+import {useState, useEffect } from "react";
 import {
 	Route,
 	Switch,
 	Redirect,
-	withRouter,
-	useHistory,
+	useHistory
 } from "react-router-dom";
 import Home from "../Pages/Home/Home";
-function App(props) {
-	const axios = require("axios");
+function App() {
 	const api = process.env.REACT_APP_AUTH_API;
 	const [isAuthenticated, setAuth] = useState(false);
 	const [token, setToken] = useState(null);
-	const history = createBrowserHistory();
+	const history = useHistory();
 	const auth = (e) => {
 		e.preventDefault();
 		const [email, password] = e.target.elements;
@@ -28,15 +24,18 @@ function App(props) {
 			})
 			.then((response) => {
 				setToken(response.data.user.token);
-				setAuth(true);
-				history.push("/home");
 			})
 			.catch((error) => {
 				alert("Wrong login credentials!!");
 			});
 	};
+	useEffect(() => {
+		if(token) {
+			setAuth(true)
+			history.push("/home")
+		}
+	}, [token])
 	return (
-		<Router history={history}>
 			<div className="App">
 				<Switch>
 					<Route path="/" exact>
@@ -50,7 +49,6 @@ function App(props) {
 					</Route>
 				</Switch>
 			</div>
-		</Router>
 	);
 }
 
